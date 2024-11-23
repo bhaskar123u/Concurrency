@@ -4,16 +4,20 @@ import entity.City;
 import entity.Movie;
 import entity.Theater;
 import service.AdminService;
+import service.TheaterService;
 
 public class AdminController {
     private final AdminService adminService;
+    private final TheaterService theaterService;
 
-    public AdminController(AdminService adminService) {
+    public AdminController(AdminService adminService, TheaterService theaterService) {
         this.adminService = adminService;
+        this.theaterService = theaterService;
     }
 
     public void addTheater(City city, String theaterName) {
-        adminService.addTheater(city, theaterName);
+        theaterService.addTheater(city, theaterName);
+        //adminService.addTheater(city, theaterName);
         System.out.println("Theater added: " + theaterName + " in " + city.getName());
     }
 

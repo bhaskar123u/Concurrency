@@ -16,6 +16,7 @@ import service.AdminService;
 import service.BookingService;
 import service.CancellationService;
 import service.SearchService;
+import service.TheaterService;
 
 public class BookMyShow {
   public static void main(String[] args) {
@@ -26,9 +27,10 @@ public class BookMyShow {
         BookingService bookingService = new BookingService();
         CancellationService cancellationService = new CancellationService();
         AddOnsService addOnsService = new AddOnsService();
+        TheaterService theaterService = new TheaterService();
 
         // Controllers
-        AdminController adminController = new AdminController(adminService);
+        AdminController adminController = new AdminController(adminService, theaterService);
         UserController userController = new UserController(searchService, bookingService, cancellationService, addOnsService);
 
         // Entities

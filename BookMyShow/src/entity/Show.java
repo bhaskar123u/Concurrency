@@ -72,7 +72,7 @@ public class Show {
   public synchronized boolean bookSeats(List<int[]> seatChoices) {
     for (int[] choice : seatChoices) {
       if (choice[0] >= seats.length || choice[1] >= seats[0].length || seats[choice[0]][choice[1]].isBooked()) {
-        return false; // If any seat is already booked
+        return false; // If any seat is invalid or already booked
       }
     }
 
